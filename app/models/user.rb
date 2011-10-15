@@ -56,10 +56,8 @@ class User < ActiveRecord::Base
   def apply_facebook(omniauth)
     if (extra = omniauth['extra']['user_hash'] rescue false)
       self.email = (extra['email'] rescue '')
-      puts ''
-      puts 'facebook user_hash'
-      puts omniauth['extra']['user_hash']
-      puts ''
+      
+      self.image_remote_url = "http://graph.facebook.com/" + extra['id'] + "/picture?type=large"
     end
   end
 
