@@ -1,7 +1,17 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_filter :is_admin, :except => ['create', 'build_resource', 'show']
+  before_filter :is_following, :only => ['show']
+	
   def create
     super
     session[:omniauth] = nil unless @user.new_record?
+  end
+  
+  def index
+  end
+  
+  def show
+    @user = User.find(params[:id])	  
   end
   
   private

@@ -25,4 +25,7 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def is_following 
+  end
+  
 end

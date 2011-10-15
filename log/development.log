@@ -2632,3 +2632,2060 @@ Started GET "/posts/3" for 127.0.0.1 at Sat Oct 15 13:10:42 -0700 2011
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
 Rendered posts/show.html.erb within layouts/application (120.1ms)
 Completed 200 OK in 139ms (Views: 127.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/email_users" for 127.0.0.1 at Sat Oct 15 13:36:37 -0700 2011
+
+ActionController::RoutingError (No route matches "/email_users"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at Sat Oct 15 13:36:52 -0700 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSQL (55.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE (`posts`.`id` = 3) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 284ms (Views: 63.7ms | ActiveRecord: 55.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Sat Oct 15 13:36:56 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/3"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at Sat Oct 15 13:37:05 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/4"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/user/4" for 127.0.0.1 at Sat Oct 15 13:37:09 -0700 2011
+
+ActionController::RoutingError (No route matches "/user/4"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 13:37:13 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 101ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:37:13 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (60.2ms)
+Completed   in 76ms
+
+ActionView::Template::Error (undefined method `firstname' for nil:NilClass):
+    13:   <tr>
+    14:     <td><%= post.title %></td>
+    15:     <td><%= post.content.html_safe %></td>
+    16:     <td><%= username(post.user) %></td>
+    17:     <td><%= link_to 'Show', post %></td>
+    18:     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    19:     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/helpers/application_helper.rb:5:in `username'
+  app/views/posts/index.html.erb:16:in `_app_views_posts_index_html_erb___372817903_2174672660_0'
+  app/views/posts/index.html.erb:12:in `each'
+  app/views/posts/index.html.erb:12:in `_app_views_posts_index_html_erb___372817903_2174672660_0'
+  app/controllers/posts_controller.rb:10:in `index'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (567.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (577.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:37:48 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 133ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:37:53 -0700 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:39:53 -0700 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:39:54 -0700 2011
+
+ActionController::RoutingError (No route matches "/users"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at Sat Oct 15 13:42:20 -0700 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE (`posts`.`id` = 1) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 291ms (Views: 113.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:42:41 -0700 2011
+
+SyntaxError (compile error
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:161: syntax error, unexpected ':', expecting '\n' or ';'
+...          def hash_for_users_:id_path(options = nil)        ...
+                              ^
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:163: syntax error, unexpected kEND, expecting $end
+              end                              ...
+                 ^):
+  config/routes.rb:10
+  config/routes.rb:7
+  config/routes.rb:1
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:42:42 -0700 2011
+  Processing by RegistrationsController#index as HTML
+Rendered registrations/index.html.erb within layouts/application (12.6ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:controller=>"authentications", :action=>"create"}):
+    32:           Signed in as <%= username(current_user) %>.<br />
+    33:           Not you? <%= link_to "Sign out", destroy_user_session_path %>
+    34:         <% else %>
+    35:           <%= link_to "Sign In", authentications_path %>
+    36:         <% end %>
+    37:       </div>
+    38:       <% flash.each do |name, msg| %>
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__1227553938_2172461300_0'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (366.8ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (454.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:43:36 -0700 2011
+
+SyntaxError (compile error
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:161: syntax error, unexpected ':', expecting '\n' or ';'
+...          def hash_for_users_:id_path(options = nil)        ...
+                              ^
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:163: syntax error, unexpected kEND, expecting $end
+              end                              ...
+                 ^):
+  config/routes.rb:9
+  config/routes.rb:7
+  config/routes.rb:1
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:43:37 -0700 2011
+  Processing by RegistrationsController#index as HTML
+Rendered registrations/index.html.erb within layouts/application (11.8ms)
+Completed   in 24ms
+
+ActionView::Template::Error (No route matches {:controller=>"authentications", :action=>"create"}):
+    32:           Signed in as <%= username(current_user) %>.<br />
+    33:           Not you? <%= link_to "Sign out", destroy_user_session_path %>
+    34:         <% else %>
+    35:           <%= link_to "Sign In", authentications_path %>
+    36:         <% end %>
+    37:       </div>
+    38:       <% flash.each do |name, msg| %>
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__1227553938_2172595600_0'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (355.9ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (364.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:43:39 -0700 2011
+  Processing by RegistrationsController#index as HTML
+Rendered registrations/index.html.erb within layouts/application (95.0ms)
+Completed   in 107ms
+
+ActionView::Template::Error (No route matches {:controller=>"authentications", :action=>"create"}):
+    32:           Signed in as <%= username(current_user) %>.<br />
+    33:           Not you? <%= link_to "Sign out", destroy_user_session_path %>
+    34:         <% else %>
+    35:           <%= link_to "Sign In", authentications_path %>
+    36:         <% end %>
+    37:       </div>
+    38:       <% flash.each do |name, msg| %>
+  app/views/layouts/application.html.erb:35:in `_app_views_layouts_application_html_erb__1227553938_2172124880_0'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (293.4ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (388.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:45:08 -0700 2011
+
+SyntaxError (compile error
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:161: syntax error, unexpected ':', expecting '\n' or ';'
+...          def hash_for_users_:id_path(options = nil)        ...
+                              ^
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:163: syntax error, unexpected kEND, expecting $end
+              end                              ...
+                 ^):
+  config/routes.rb:9
+  config/routes.rb:7
+  config/routes.rb:1
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:11 -0700 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:14 -0700 2011
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:24 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (197.6ms)
+Completed 200 OK in 215ms (Views: 205.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:56 -0700 2011
+
+SyntaxError (compile error
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:161: syntax error, unexpected ':', expecting '\n' or ';'
+...          def hash_for_users_:id_path(options = nil)        ...
+                              ^
+/Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/routing/route_set.rb:163: syntax error, unexpected kEND, expecting $end
+              end                              ...
+                 ^):
+  config/routes.rb:15
+  config/routes.rb:13
+  config/routes.rb:1
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:57 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 146ms (Views: 137.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:45:58 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 63ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:46:02 -0700 2011
+  Processing by RegistrationsController#index as HTML
+Rendered registrations/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 107ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:46:08 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Rendered registrations/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:47:29 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:47:29 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (158.3ms)
+Completed 200 OK in 173ms (Views: 165.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:47:31 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 13:47:32 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 32ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at Sat Oct 15 13:47:33 -0700 2011
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 13:47:36 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=muMJNcHCpY6p9CQ4v2r5yHSJQQgjn97jMBTfdLaYTtw&oauth_verifier=TYhNfu8FXpO4o5eTglfMlw4IauORihBWgSWAEIGiI" for 127.0.0.1 at Sat Oct 15 13:47:37 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"TYhNfu8FXpO4o5eTglfMlw4IauORihBWgSWAEIGiI", "oauth_token"=>"muMJNcHCpY6p9CQ4v2r5yHSJQQgjn97jMBTfdLaYTtw", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 20:47:37', `last_sign_in_at` = '2011-10-15 19:23:18', `sign_in_count` = 3, `updated_at` = '2011-10-15 20:47:37' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:47:37 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (133.8ms)
+Completed 200 OK in 150ms (Views: 141.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:47:44 -0700 2011
+  Processing by RegistrationsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered registrations/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 13.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Oct 15 13:50:00 -0700 2011
+  Processing by RegistrationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered registrations/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:50:06 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered registrations/show.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 44ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:50:14 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered registrations/show.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 43ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:50:45 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:50:45 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 65ms (Views: 56.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:50:55 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (133.3ms)
+Completed 200 OK in 149ms (Views: 140.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Sat Oct 15 13:50:58 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered registrations/show.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:54:06 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 146ms (Views: 137.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 13:54:09 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:54:09 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (134.8ms)
+Completed 200 OK in 151ms (Views: 143.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 13:54:13 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 25ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 13:54:21 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=FpMo9Xy1hUYR5ESb03oQq5zKIo0PU05wj3J08slA&oauth_verifier=xaL67Jl6jDTLEaRjRaA2mA79ng9RE974pg2PD3ojhKc" for 127.0.0.1 at Sat Oct 15 13:54:22 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"xaL67Jl6jDTLEaRjRaA2mA79ng9RE974pg2PD3ojhKc", "oauth_token"=>"FpMo9Xy1hUYR5ESb03oQq5zKIo0PU05wj3J08slA", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 20:54:22', `last_sign_in_at` = '2011-10-15 20:47:37', `sign_in_count` = 4, `updated_at` = '2011-10-15 20:54:22' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (26.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:54:22 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (147.3ms)
+Completed 200 OK in 165ms (Views: 156.2ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (53.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20100927035705)
+Migrating to CreateAuthentications (20101011050048)
+Migrating to ChangeDefaultForUsers (20111015064416)
+Migrating to CreateCkeditorAssets (20111015100812)
+Migrating to CreatePosts (20111015171458)
+Migrating to AddAccountTypeToUser (20111015174548)
+Migrating to DropProjectAndTasksTables (20111015181723)
+Migrating to AddSecretTokenToAuthentications (20111015185904)
+Migrating to AddNameToUsers (20111015190308)
+Migrating to AddImageRemoteUrlToUsers (20111015210654)
+  [1m[35mSQL (276.4ms)[0m  ALTER TABLE `users` ADD `image_remote_url` varchar(255)
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20111015210654')
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (13.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.9ms)[0m  describe `authentications`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW KEYS FROM `authentications`[0m
+  [1m[35mSQL (25.4ms)[0m  describe `ckeditor_assets`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `ckeditor_assets`[0m
+  [1m[35mSQL (49.9ms)[0m  describe `posts`
+  [1m[36mSQL (15.8ms)[0m  [1mSHOW KEYS FROM `posts`[0m
+  [1m[35mSQL (37.1ms)[0m  describe `users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:08:21 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 167ms (Views: 127.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/show_user" for 127.0.0.1 at Sat Oct 15 14:09:30 -0700 2011
+
+ActionController::RoutingError (No route matches "/show_user"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/show_user/1" for 127.0.0.1 at Sat Oct 15 14:09:33 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered registrations/show.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:12:24 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:12:25 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 144ms (Views: 58.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:12:26 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 24ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:12:28 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=vrP9eO2iLT49tlJKDz3oihMkRBSM80xc44CJEHmXBE&oauth_verifier=K6ECzuyUSDRxmkPLS7PnMDGeWBwwNbUzKQylSwDdGI" for 127.0.0.1 at Sat Oct 15 14:12:28 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"K6ECzuyUSDRxmkPLS7PnMDGeWBwwNbUzKQylSwDdGI", "oauth_token"=>"vrP9eO2iLT49tlJKDz3oihMkRBSM80xc44CJEHmXBE", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:12:29', `last_sign_in_at` = '2011-10-15 20:54:22', `sign_in_count` = 5, `updated_at` = '2011-10-15 21:12:29' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 113ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:12:29 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (120.8ms)
+Completed 200 OK in 136ms (Views: 127.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:12:31 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:12:31 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (129.4ms)
+Completed 200 OK in 145ms (Views: 136.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:14:11 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:14:17 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 23ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:14:20 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=z7Nixfs0qqmzv1NjVgHWzxFi0kpyOCqba6FqqQ3B4&oauth_verifier=KtEuGiflpaiyr0DSkhvFuYGUdxkMhIDS1MJ74GSho" for 127.0.0.1 at Sat Oct 15 14:14:20 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"KtEuGiflpaiyr0DSkhvFuYGUdxkMhIDS1MJ74GSho", "oauth_token"=>"z7Nixfs0qqmzv1NjVgHWzxFi0kpyOCqba6FqqQ3B4", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:14:21', `last_sign_in_at` = '2011-10-15 21:12:29', `sign_in_count` = 6, `updated_at` = '2011-10-15 21:14:21' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (25.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:14:21 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 66ms (Views: 56.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:15:09 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:15:10 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 70ms (Views: 61.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:15:11 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 23ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:15:16 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=EKFWmb1raCehqSBQ8aGtGidyt6TrxpJIer3zBgXCCM&oauth_verifier=g1OUGg3c1fEjLFU56WiaNrPzXJMKhg6N6ZZOj4yusc" for 127.0.0.1 at Sat Oct 15 14:15:17 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"g1OUGg3c1fEjLFU56WiaNrPzXJMKhg6N6ZZOj4yusc", "oauth_token"=>"EKFWmb1raCehqSBQ8aGtGidyt6TrxpJIer3zBgXCCM", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:15:17', `last_sign_in_at` = '2011-10-15 21:14:21', `sign_in_count` = 7, `updated_at` = '2011-10-15 21:15:17' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:15:17 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (49.3ms)
+Completed 200 OK in 155ms (Views: 56.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:15:42 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:15:42 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 66ms (Views: 57.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:15:48 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:15:49 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=T296NuJ5H3QrY14DYKJbcinVS3qL7RrFxTtBAgcFg4&oauth_verifier=cgdNXi1ieEIKyTszna87KrAXGYVJ4PNfxJl8CiM" for 127.0.0.1 at Sat Oct 15 14:15:50 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"cgdNXi1ieEIKyTszna87KrAXGYVJ4PNfxJl8CiM", "oauth_token"=>"T296NuJ5H3QrY14DYKJbcinVS3qL7RrFxTtBAgcFg4", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.5ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:15:51', `last_sign_in_at` = '2011-10-15 21:15:17', `sign_in_count` = 8, `updated_at` = '2011-10-15 21:15:51' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 84ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:15:51 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (127.9ms)
+Completed 200 OK in 152ms (Views: 135.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:16:18 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:16:18 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (138.2ms)
+Completed 200 OK in 154ms (Views: 145.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:16:20 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:16:25 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=Grak01o1Pa7xBa2tuldfSEboFRjTtwjoKGkG8yZw3LM&oauth_verifier=pvHbQ4G0h5kGy3XeQSHYtT0nVh2tUjHOkXfNT6E" for 127.0.0.1 at Sat Oct 15 14:16:25 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"pvHbQ4G0h5kGy3XeQSHYtT0nVh2tUjHOkXfNT6E", "oauth_token"=>"Grak01o1Pa7xBa2tuldfSEboFRjTtwjoKGkG8yZw3LM", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.4ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (7.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:16:26', `last_sign_in_at` = '2011-10-15 21:15:51', `sign_in_count` = 9, `updated_at` = '2011-10-15 21:16:26' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:16:26 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 64ms (Views: 55.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:16:48 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:16:48 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 70ms (Views: 61.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:16:50 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:16:54 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=YnsnPjKE2JJkscDcrIGvtn8rpGSDXMvI1KV9PrbdAg&oauth_verifier=8Qh0eyB5GQb7wgtWmOURxZd7LXfC08OUreVXrZMo8" for 127.0.0.1 at Sat Oct 15 14:16:54 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"8Qh0eyB5GQb7wgtWmOURxZd7LXfC08OUreVXrZMo8", "oauth_token"=>"YnsnPjKE2JJkscDcrIGvtn8rpGSDXMvI1KV9PrbdAg", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+Completed   in 18ms
+
+NoMethodError (undefined method `image' for #<Hash:0x10386fbb0>):
+  app/controllers/authentications_controller.rb:20:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (632.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (644.1ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:17:49 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=EyM9OLCvGLpikJMrG6qoeMye06qUOC9CsrlnR1W0290&oauth_verifier=fOYJgc12OyljLv0uUlS8n6xLz48HrkFIMH94xnR02XY" for 127.0.0.1 at Sat Oct 15 14:17:49 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"fOYJgc12OyljLv0uUlS8n6xLz48HrkFIMH94xnR02XY", "oauth_token"=>"EyM9OLCvGLpikJMrG6qoeMye06qUOC9CsrlnR1W0290", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:17:50', `last_sign_in_at` = '2011-10-15 21:16:26', `sign_in_count` = 10, `updated_at` = '2011-10-15 21:17:50' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (1.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 58ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:17:50 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 69ms (Views: 59.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:18:06 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 32ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:18:06 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 70ms (Views: 61.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:18:07 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:18:16 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=0pNt2wRk85HEnOxMJZZunzv02Cc7PU6g9iUaZOFBq4&oauth_verifier=e114NBHUL5SPy1rkQtyetKZKGnwrglRYZnbZEpiiQ" for 127.0.0.1 at Sat Oct 15 14:18:16 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"e114NBHUL5SPy1rkQtyetKZKGnwrglRYZnbZEpiiQ", "oauth_token"=>"0pNt2wRk85HEnOxMJZZunzv02Cc7PU6g9iUaZOFBq4", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:18:16', `last_sign_in_at` = '2011-10-15 21:17:50', `sign_in_count` = 11, `updated_at` = '2011-10-15 21:18:16' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:18:16 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 153ms (Views: 145.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:19:00 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:19:00 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (136.1ms)
+Completed 200 OK in 152ms (Views: 143.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:19:02 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:19:09 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=YUfuBlgq14S5NOfJF4ALzzjGoSUCIFpE1tofub36Q&oauth_verifier=buhONq2q1sdsXhOcVgrxEQbUKoS1ak76xKYLCyA34dM" for 127.0.0.1 at Sat Oct 15 14:19:10 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"buhONq2q1sdsXhOcVgrxEQbUKoS1ak76xKYLCyA34dM", "oauth_token"=>"YUfuBlgq14S5NOfJF4ALzzjGoSUCIFpE1tofub36Q", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:19:11', `last_sign_in_at` = '2011-10-15 21:18:16', `sign_in_count` = 12, `updated_at` = '2011-10-15 21:19:11' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 136ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:19:11 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 68ms (Views: 59.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:20:20 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:20:20 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (52.8ms)
+Completed 200 OK in 71ms (Views: 61.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:20:22 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 22ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:20:27 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=9kl5NPCnRl3qlmp4k4JvEfUWEQbtVOcwVCE6k3GEg&oauth_verifier=9DXXpWUEdwqYIle9JjGIjMRMAMJjl0DyseYGHkJMIXE" for 127.0.0.1 at Sat Oct 15 14:20:27 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"9DXXpWUEdwqYIle9JjGIjMRMAMJjl0DyseYGHkJMIXE", "oauth_token"=>"9kl5NPCnRl3qlmp4k4JvEfUWEQbtVOcwVCE6k3GEg", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:20:28', `last_sign_in_at` = '2011-10-15 21:19:11', `sign_in_count` = 13, `updated_at` = '2011-10-15 21:20:28' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:20:28 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (133.6ms)
+Completed 200 OK in 151ms (Views: 142.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:21:15 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:21:15 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (148.5ms)
+Completed 200 OK in 167ms (Views: 158.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:21:17 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 23ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:21:28 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=QWMfWYiZKy0huWpI8Dhu5i7NCj3cHgeNxgkSxnL8WRU&oauth_verifier=E0J2Lk2qhmYl8hdHfby8taqUwmqVmVggds5Dba9SGE" for 127.0.0.1 at Sat Oct 15 14:21:29 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"E0J2Lk2qhmYl8hdHfby8taqUwmqVmVggds5Dba9SGE", "oauth_token"=>"QWMfWYiZKy0huWpI8Dhu5i7NCj3cHgeNxgkSxnL8WRU", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:21:30', `last_sign_in_at` = '2011-10-15 21:20:28', `sign_in_count` = 14, `updated_at` = '2011-10-15 21:21:30' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:21:30 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 149ms (Views: 55.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:22:14 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:22:14 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 154ms (Views: 55.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:22:15 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 23ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:22:20 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=xMVuJHNxDTWsSx5sG2zkGknm1oGMT50OMDgtjgKJyJg&oauth_verifier=gieezAfxNbwPiBffsoMaVkkHkENXdDTlFRo6dNVRRo" for 127.0.0.1 at Sat Oct 15 14:22:21 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"gieezAfxNbwPiBffsoMaVkkHkENXdDTlFRo6dNVRRo", "oauth_token"=>"xMVuJHNxDTWsSx5sG2zkGknm1oGMT50OMDgtjgKJyJg", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:22:21', `last_sign_in_at` = '2011-10-15 21:21:30', `sign_in_count` = 15, `updated_at` = '2011-10-15 21:22:21' WHERE (`users`.`id` = 4)[0m
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 133ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:22:21 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 65ms (Views: 55.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:23:04 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 115ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:23:04 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 68ms (Views: 57.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:23:05 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 118ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:23:09 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=b1y4qry7BywQKj311wQ30SSdE4iOWneK8tX2xBBn5w&oauth_verifier=75wAarfoYuTHcqYoXfTcKvKJyc7Y999zBodeCuapI" for 127.0.0.1 at Sat Oct 15 14:23:10 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"75wAarfoYuTHcqYoXfTcKvKJyc7Y999zBodeCuapI", "oauth_token"=>"b1y4qry7BywQKj311wQ30SSdE4iOWneK8tX2xBBn5w", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:23:10', `last_sign_in_at` = '2011-10-15 21:22:21', `sign_in_count` = 16, `updated_at` = '2011-10-15 21:23:10' WHERE (`users`.`id` = 4)
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:23:10 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (135.4ms)
+Completed 200 OK in 151ms (Views: 142.8ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (33.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20100927035705)
+Migrating to CreateAuthentications (20101011050048)
+Migrating to ChangeDefaultForUsers (20111015064416)
+Migrating to CreateCkeditorAssets (20111015100812)
+Migrating to CreatePosts (20111015171458)
+Migrating to AddAccountTypeToUser (20111015174548)
+Migrating to DropProjectAndTasksTables (20111015181723)
+Migrating to AddSecretTokenToAuthentications (20111015185904)
+Migrating to AddNameToUsers (20111015190308)
+Migrating to AddImageRemoteUrlToUsers (20111015210654)
+Migrating to AddAttachmentPhotoToUser (20111015212546)
+  [1m[35mSQL (368.1ms)[0m  ALTER TABLE `users` ADD `photo_file_name` varchar(255)
+  [1m[36mSQL (720.9ms)[0m  [1mALTER TABLE `users` ADD `photo_content_type` varchar(255)[0m
+  [1m[35mSQL (339.0ms)[0m  ALTER TABLE `users` ADD `photo_file_size` int(11)
+  [1m[36mSQL (1107.0ms)[0m  [1mALTER TABLE `users` ADD `photo_updated_at` datetime[0m
+  [1m[35mSQL (19.9ms)[0m  describe `schema_migrations`
+  [1m[36mSQL (10.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111015212546')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (65.9ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `authentications`
+  [1m[36mSQL (16.3ms)[0m  [1mdescribe `ckeditor_assets`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `ckeditor_assets`
+  [1m[36mSQL (29.7ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (8.3ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:29:10 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 136ms (Views: 100.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/sign_out" for 127.0.0.1 at Sat Oct 15 14:29:16 -0700 2011
+
+ActionController::RoutingError (No route matches "/sign_out"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/signout" for 127.0.0.1 at Sat Oct 15 14:29:19 -0700 2011
+
+ActionController::RoutingError (No route matches "/signout"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:29:54 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 20ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:29:56 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 26ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:29:57 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=yHvmQ0JkYuXqV54lXfBdGB3D4Bn4fhXJV4sSvgZZ9o&oauth_verifier=lxA2aIeXSDyBotLmLk9CzSIOSCIFExsgaIrQEJyHpA" for 127.0.0.1 at Sat Oct 15 14:29:58 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"lxA2aIeXSDyBotLmLk9CzSIOSCIFExsgaIrQEJyHpA", "oauth_token"=>"yHvmQ0JkYuXqV54lXfBdGB3D4Bn4fhXJV4sSvgZZ9o", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Completed   in 140ms
+
+NoMethodError (undefined method `image_url' for #<User:0x103873648>):
+  app/models/user.rb:81:in `image_url_provided?'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (619.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (706.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:31:27 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:31:28 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (83.8ms)
+Completed 200 OK in 103ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:31:30 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=tIMyQSczowVcMJHmtahdazOaQGFNgNRqPgjudfW0&oauth_verifier=1UhP75PYCYmwGPyu4InrXNA4vWvLX6uKuh0LCw634" for 127.0.0.1 at Sat Oct 15 14:31:30 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"1UhP75PYCYmwGPyu4InrXNA4vWvLX6uKuh0LCw634", "oauth_token"=>"tIMyQSczowVcMJHmtahdazOaQGFNgNRqPgjudfW0", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.4ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+Completed   in 49ms
+
+NoMethodError (undefined method `image_url=' for #<User:0x1033c43e0>):
+  app/models/user.rb:66:in `apply_twitter'
+  app/models/user.rb:36:in `apply_omniauth'
+  app/controllers/authentications_controller.rb:20:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (618.5ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (629.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:31:49 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 100ms (Views: 23.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:31:51 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:31:52 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=aD1WdS0lXqAKTSSGK243qHYLxx9kuKDeoNAwTVwzo&oauth_verifier=xByUP4xJWcRC1bWLRAnPOupFfdVF04cU3FyydcWno" for 127.0.0.1 at Sat Oct 15 14:31:52 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"xByUP4xJWcRC1bWLRAnPOupFfdVF04cU3FyydcWno", "oauth_token"=>"aD1WdS0lXqAKTSSGK243qHYLxx9kuKDeoNAwTVwzo", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Completed   in 133ms
+
+NoMethodError (undefined method `image_url' for #<User:0x102f4a1e8>):
+  app/models/user.rb:81:in `image_url_provided?'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (566.0ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (645.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:32:54 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 34ms (Views: 23.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:32:56 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:32:57 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=6HSLFCMNG6mtCkMwjac3jiYAMFfws9faFikFf8YOXg&oauth_verifier=3D4RPyZWyjdKR4DZFc6GXX2H6f1JDEv1RJFXcfz4o" for 127.0.0.1 at Sat Oct 15 14:32:58 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"3D4RPyZWyjdKR4DZFc6GXX2H6f1JDEv1RJFXcfz4o", "oauth_token"=>"6HSLFCMNG6mtCkMwjac3jiYAMFfws9faFikFf8YOXg", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+Completed   in 129ms
+
+NoMethodError (undefined method `image_url=' for #<User:0x102ea4270>):
+  app/models/user.rb:66:in `apply_twitter'
+  app/models/user.rb:36:in `apply_omniauth'
+  app/controllers/authentications_controller.rb:20:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (564.3ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (575.3ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:33:41 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=ynaGum5JHCRBQnyhGA8PU5GxSi0pHU5HrLQMtqN3ag&oauth_verifier=cUG6qlrfNXILv5BdhEAMuTQT6YAAYzLW5RTJicSaSco" for 127.0.0.1 at Sat Oct 15 14:33:42 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"cUG6qlrfNXILv5BdhEAMuTQT6YAAYzLW5RTJicSaSco", "oauth_token"=>"ynaGum5JHCRBQnyhGA8PU5GxSi0pHU5HrLQMtqN3ag", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Completed   in 121ms
+
+NoMethodError (undefined method `image=' for #<User:0x103869e40>):
+  app/models/user.rb:85:in `download_remote_image'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (543.9ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (555.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:34:07 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=DkCiBPclcPFwuV64tnkvKuBgJunIAYaxk9qx1fIvw&oauth_verifier=ORU5iilWtWe7PTlrwhZ13oNdfrHvs1WNgiiQ3XUmM" for 127.0.0.1 at Sat Oct 15 14:34:08 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"ORU5iilWtWe7PTlrwhZ13oNdfrHvs1WNgiiQ3XUmM", "oauth_token"=>"DkCiBPclcPFwuV64tnkvKuBgJunIAYaxk9qx1fIvw", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Completed   in 125ms
+
+NoMethodError (undefined method `image=' for #<User:0x10387e390>):
+  app/models/user.rb:85:in `download_remote_image'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (577.3ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (588.5ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:35:13 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=3T28L9WF8PSCnDbA5wNPTSb64PBA09SvKZvOCeDhM&oauth_verifier=uaUncOeO8Skz3OIau5YrJVCJElgbvacVy4lv44qbH1M" for 127.0.0.1 at Sat Oct 15 14:35:14 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"uaUncOeO8Skz3OIau5YrJVCJElgbvacVy4lv44qbH1M", "oauth_token"=>"3T28L9WF8PSCnDbA5wNPTSb64PBA09SvKZvOCeDhM", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Completed   in 122ms
+
+NoMethodError (undefined method `image=' for #<User:0x1039345a0>):
+  app/models/user.rb:85:in `download_remote_image'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (583.6ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (595.2ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:35:51 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=xupPnEPXRJPdyTcTIqWAq8jGKue9G3dOPyLLVF75J0&oauth_verifier=XJbWRmViS1GuvfHgbTiAlPVk36pF36Km4dtvcJq0" for 127.0.0.1 at Sat Oct 15 14:35:52 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"XJbWRmViS1GuvfHgbTiAlPVk36pF36Km4dtvcJq0", "oauth_token"=>"xupPnEPXRJPdyTcTIqWAq8jGKue9G3dOPyLLVF75J0", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.4ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (24.2ms)[0m  INSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:35:52', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:35:52')
+  [1m[36mSQL (3.2ms)[0m  [1mdescribe `authentications`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:35:52', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:35:52', 5)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:35:52', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:35:52', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:35:52' WHERE (`users`.`id` = 5)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 163ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:35:52 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 5) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 138ms (Views: 130.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:36:46 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 5) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 34ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:36:47 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 31ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:37:09 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/application (110.1ms)
+Completed 200 OK in 126ms (Views: 117.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:37:11 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:37:29 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 25ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:37:31 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=QJQMPOt8MATU3BJ8ORxlR8oU0nKisoGlcbCWIz8DpU&oauth_verifier=fgh5Whv0VAmileADJBXxPoIeKkRlDcUs5jJ1gCPfM" for 127.0.0.1 at Sat Oct 15 14:37:31 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"fgh5Whv0VAmileADJBXxPoIeKkRlDcUs5jJ1gCPfM", "oauth_token"=>"QJQMPOt8MATU3BJ8ORxlR8oU0nKisoGlcbCWIz8DpU", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.3ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Completed   in 49ms
+
+NameError (undefined local variable or method `image_url' for #<User:0x102eaae90>):
+  app/models/user.rb:86:in `download_remote_image'
+  app/controllers/authentications_controller.rb:21:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (481.3ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (491.6ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:37:47 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=CIP7GcFfHFEPVNrsqcK9U0g2ca9YpuR9JDxe1O3xEo&oauth_verifier=AbQO0YHnKYeJAtRg4XwrYyRYZv5h2a1kP5XJZH1xw" for 127.0.0.1 at Sat Oct 15 14:37:48 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"AbQO0YHnKYeJAtRg4XwrYyRYZv5h2a1kP5XJZH1xw", "oauth_token"=>"CIP7GcFfHFEPVNrsqcK9U0g2ca9YpuR9JDxe1O3xEo", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:37:49', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:37:49')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:37:49', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:37:49', 6)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:37:49', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:37:49', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:37:49' WHERE (`users`.`id` = 6)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:37:49 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 6) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (156.5ms)
+Completed 200 OK in 173ms (Views: 163.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:39:10 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 6) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:39:10 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 137ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:39:12 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 26ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:39:20 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=KSM61sPaIlfGl9WDkhTzy5IUzeahYelFIir1X9AcI&oauth_verifier=oSf0mh3m7v3eUutXbo8mHCSwz35ANunFH0dAVOKBM7g" for 127.0.0.1 at Sat Oct 15 14:39:20 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"oSf0mh3m7v3eUutXbo8mHCSwz35ANunFH0dAVOKBM7g", "oauth_token"=>"KSM61sPaIlfGl9WDkhTzy5IUzeahYelFIir1X9AcI", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:39:21', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:39:21')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:39:21', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:39:21', 7)
+[paperclip] Saving attachments.
+  [1m[36mSQL (24.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:39:21', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:39:21', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:39:21' WHERE (`users`.`id` = 7)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 93ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:39:21 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 7) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (131.1ms)
+Completed 200 OK in 147ms (Views: 138.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:40:27 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:40:27 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 35ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:40:29 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 24ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:40:30 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=UU4TyXX338fICOC5wNgWYAaDcLXJuFlOxtTWosWx0Q&oauth_verifier=d9XDQ2cqmFNewc2z4XGgD8KJxAyTxRh2y5mwbl6M" for 127.0.0.1 at Sat Oct 15 14:40:31 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"d9XDQ2cqmFNewc2z4XGgD8KJxAyTxRh2y5mwbl6M", "oauth_token"=>"UU4TyXX338fICOC5wNgWYAaDcLXJuFlOxtTWosWx0Q", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:40:32', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:40:32')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:40:32', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:40:32', 8)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:40:32', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:40:32', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:40:32' WHERE (`users`.`id` = 8)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 69ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:40:32 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 8) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 58ms (Views: 49.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:41:57 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:41:57 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:41:59 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 25ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:42:12 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=2IOpQp5TGa1MbyYO4gc6DsWvaOuG951NCb63YWakiFc&oauth_verifier=409vyLkTdPQNWB0bEHBTjh0zt9wf4TxTiL2nwbwXM" for 127.0.0.1 at Sat Oct 15 14:42:13 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"409vyLkTdPQNWB0bEHBTjh0zt9wf4TxTiL2nwbwXM", "oauth_token"=>"2IOpQp5TGa1MbyYO4gc6DsWvaOuG951NCb63YWakiFc", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:42:13', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:42:13')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:42:13', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:42:13', 9)
+[paperclip] Saving attachments.
+  [1m[36mSQL (25.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:42:13', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:42:13', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:42:13' WHERE (`users`.`id` = 9)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 94ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:42:13 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 9) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 57ms (Views: 47.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:42:37 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 9) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:42:37 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 32ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:42:39 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 27ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:42:40 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=8VC8HMf0EXhpUdxeH0o53pGqnlXNZqK1LIV5n9S0&oauth_verifier=iSnzxQEakZjMUr2n1QqyZ60JVf0hsGMXqEHjskEeQM" for 127.0.0.1 at Sat Oct 15 14:42:41 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"iSnzxQEakZjMUr2n1QqyZ60JVf0hsGMXqEHjskEeQM", "oauth_token"=>"8VC8HMf0EXhpUdxeH0o53pGqnlXNZqK1LIV5n9S0", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (12.4ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:42:41', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:42:41')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:42:41', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:42:41', 10)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:42:41', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:42:41', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:42:41' WHERE (`users`.`id` = 10)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:42:41 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 10) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 59ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:43:19 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 10) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:43:19 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 39ms (Views: 28.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:43:20 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 25ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:43:29 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=iPg6v9Gn3MxAGBSbPyKdXar43Z5AITCsAM5Yr8tbg&oauth_verifier=GxJMRaDV3V9ZFnNBsUi3bdaSxlzhMCJnZn9QKCIIrw" for 127.0.0.1 at Sat Oct 15 14:43:29 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"GxJMRaDV3V9ZFnNBsUi3bdaSxlzhMCJnZn9QKCIIrw", "oauth_token"=>"iPg6v9Gn3MxAGBSbPyKdXar43Z5AITCsAM5Yr8tbg", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:43:30', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:43:30')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:43:30', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:43:30', 11)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:43:30', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:43:30', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:43:30' WHERE (`users`.`id` = 11)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 188ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:43:30 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 11) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 55ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:44:16 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 11) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 35ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:44:16 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (124.8ms)
+Completed 200 OK in 141ms (Views: 132.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:44:18 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 25ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:44:26 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=8LWiyKOUuSkI6Fo5bHU3Y7VjN554HegnBrDeTD0uoNc&oauth_verifier=2hj7TJbmHqd4y7iZXEi1PcXkfTTBVLkFzTCo3vH4uQ" for 127.0.0.1 at Sat Oct 15 14:44:27 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"2hj7TJbmHqd4y7iZXEi1PcXkfTTBVLkFzTCo3vH4uQ", "oauth_token"=>"8LWiyKOUuSkI6Fo5bHU3Y7VjN554HegnBrDeTD0uoNc", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:44:27', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:44:27')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:44:27', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:44:27', 12)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:44:27', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:44:27', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:44:27' WHERE (`users`.`id` = 12)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 67ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:44:27 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 12) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (304.4ms)
+Completed 200 OK in 319ms (Views: 310.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:45:12 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 12) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 36ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:45:12 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 34ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:45:21 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 24ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:45:26 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=NCRxMRneBZfjQVC82rhIOzliUorW6eaUS2YBt4JQ&oauth_verifier=hQxlnAW5asWdk36rN1AcLC8LsqmUbI2NeWl7aLVJ8" for 127.0.0.1 at Sat Oct 15 14:45:27 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"hQxlnAW5asWdk36rN1AcLC8LsqmUbI2NeWl7aLVJ8", "oauth_token"=>"NCRxMRneBZfjQVC82rhIOzliUorW6eaUS2YBt4JQ", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:45:27', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, '2011-10-15 21:45:27')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:45:27', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:45:27', 13)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:45:27', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:45:27', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:45:27' WHERE (`users`.`id` = 13)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 71ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:45:27 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 13) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 56ms (Views: 47.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:47:17 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 13) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 144ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:47:18 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 33ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:47:20 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 41ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:47:29 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=mldQEBSVDZlEKrPEI59NwLfq5Hk7zleDeNzsrxxpj8&oauth_verifier=ohCNxBpWelgacjJjBOwZZMtlSnIbyUPXR6HsTm2s" for 127.0.0.1 at Sat Oct 15 14:47:30 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"ohCNxBpWelgacjJjBOwZZMtlSnIbyUPXR6HsTm2s", "oauth_token"=>"mldQEBSVDZlEKrPEI59NwLfq5Hk7zleDeNzsrxxpj8", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.3ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+[32mCommand[0m :: identify -format %wx%h '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-0.JPG[0]'
+[32mCommand[0m :: convert '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-0.JPG[0]' -resize "150x150>" '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-020111015-28413-yraheh-0'
+[32mCommand[0m :: identify -format %wx%h '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-0.JPG[0]'
+[32mCommand[0m :: convert '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-0.JPG[0]' -resize "40x" -crop "40x40+0+0" +repage '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-2r8xz1-020111015-28413-1j93rby-0'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:47:32', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122_normal.JPG', NULL, NULL, NULL, '', 'image/jpeg', 'IMG_0122_normal.JPG', 2334, '2011-10-15 21:47:31', NULL, NULL, NULL, 0, '2011-10-15 21:47:32')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:47:32', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:47:32', 14)
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/14/original/IMG_0122_normal.JPG
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/14/icon/IMG_0122_normal.JPG
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/14/small/IMG_0122_normal.JPG
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:47:32', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:47:32', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:47:32' WHERE (`users`.`id` = 14)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 2202ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:47:32 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 14) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (43.2ms)
+Completed 200 OK in 60ms (Views: 51.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at Sat Oct 15 14:49:08 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 14) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:49:08 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 14:49:10 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered authentications/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 30ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:49:11 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=pL1OtglQiUjxLziaCBG6Kt2fvfRfIzPXBq5RVFEevcQ&oauth_verifier=D4KXzXa5diM5sE8R3yIHnlnnYVBP188EEyjw4hlw" for 127.0.0.1 at Sat Oct 15 14:49:12 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"D4KXzXa5diM5sE8R3yIHnlnnYVBP188EEyjw4hlw", "oauth_token"=>"pL1OtglQiUjxLziaCBG6Kt2fvfRfIzPXBq5RVFEevcQ", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (1.5ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+Completed   in 53ms
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/models/user.rb:67:in `replace'
+  app/models/user.rb:67:in `apply_twitter'
+  app/models/user.rb:37:in `apply_omniauth'
+  app/controllers/authentications_controller.rb:20:in `create'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (589.5ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (601.9ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sat Oct 15 14:49:47 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=5S9zRH98qnCj5i9tdY0gkCBW6OhTUGEqE26XA5LVj0k&oauth_verifier=F93B9SOhu0AjXXwfy2B6oL9cmChnbH0CJfqLGHhZI" for 127.0.0.1 at Sat Oct 15 14:49:47 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"F93B9SOhu0AjXXwfy2B6oL9cmChnbH0CJfqLGHhZI", "oauth_token"=>"5S9zRH98qnCj5i9tdY0gkCBW6OhTUGEqE26XA5LVj0k", "provider"=>"twitter"}
+  [1m[35mAuthentication Load (0.4ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+[32mCommand[0m :: identify -format %wx%h '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-0.JPG[0]'
+[32mCommand[0m :: convert '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-0.JPG[0]' -resize "150x150>" '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-020111015-28413-1dxo7fi-0'
+[32mCommand[0m :: identify -format %wx%h '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-0.JPG[0]'
+[32mCommand[0m :: convert '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-0.JPG[0]' -resize "40x" -crop "40x40+0+6" +repage '/var/folders/24/24aCbtOxGYmp6t+LQ4nGD++++TI/-Tmp-/stream20111015-28413-1y43s1e-020111015-28413-1f79ikj-0'
+  [1m[35mSQL (24.8ms)[0m  INSERT INTO `users` (`account_type`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `firstname`, `image_remote_url`, `last_sign_in_at`, `last_sign_in_ip`, `lastname`, `password_salt`, `photo_content_type`, `photo_file_name`, `photo_file_size`, `photo_updated_at`, `remember_created_at`, `remember_token`, `reset_password_token`, `sign_in_count`, `updated_at`) VALUES (NULL, '2011-10-15 21:49:50', NULL, NULL, '', '', 'Ben Hall', 'http://a0.twimg.com/profile_images/301414428/IMG_0122.JPG', NULL, NULL, NULL, '', 'image/jpeg', 'IMG_0122.JPG', 170272, '2011-10-15 21:49:49', NULL, NULL, NULL, 0, '2011-10-15 21:49:50')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `authentications` (`created_at`, `provider`, `secret`, `token`, `uid`, `updated_at`, `user_id`) VALUES ('2011-10-15 21:49:51', 'twitter', 'wrLRUlmEECKf7R2FgQXe6Fmy8FPtQMB8QODGy7po', '19611362-AULf3ZIHwEGib9VfpF6VX5zuTljqBzYCspLVVpjZR', '19611362', '2011-10-15 21:49:51', 15)[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/15/original/IMG_0122.JPG
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/15/icon/IMG_0122.JPG
+[paperclip] saving /Users/Ben/Desktop/Work/SideWork/athletePreneur/public/assets/user/15/small/IMG_0122.JPG
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-15 21:49:51', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_at` = '2011-10-15 21:49:51', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2011-10-15 21:49:51' WHERE (`users`.`id` = 15)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3097ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 14:49:51 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 15) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (187.9ms)
+Completed 200 OK in 210ms (Views: 197.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/15" for 127.0.0.1 at Sat Oct 15 14:55:11 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/15"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at Sat Oct 15 14:55:13 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/16"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at Sat Oct 15 14:55:36 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/16"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/users/16" for 127.0.0.1 at Sat Oct 15 14:55:36 -0700 2011
+
+ActionController::RoutingError (No route matches "/users/16"):
+  
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/show_user/16" for 127.0.0.1 at Sat Oct 15 14:56:18 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 'id') LIMIT 1
+Completed   in 112ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=id):
+  app/controllers/registrations_controller.rb:14:in `show'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (466.7ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (578.1ms)
+
+
+Started GET "/show_user/16" for 127.0.0.1 at Sat Oct 15 14:56:58 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 16) LIMIT 1[0m
+Completed   in 24ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=16):
+  app/controllers/registrations_controller.rb:14:in `show'
+
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (457.0ms)
+Rendered /Users/Ben/.rvm/gems/ruby-1.8.7-p352/gems/actionpack-3.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (466.9ms)
+
+
+Started GET "/show_user/15" for 127.0.0.1 at Sat Oct 15 14:57:06 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 15) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 15) LIMIT 1[0m
+Rendered registrations/show.html.erb within layouts/application (51.0ms)
+Completed 200 OK in 173ms (Views: 62.0ms | ActiveRecord: 0.4ms)

@@ -1,3 +1,4 @@
+require 'open-uri'
 class User < ActiveRecord::Base
   has_many :authentications
   has_many :posts
@@ -8,12 +9,21 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable #, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :account_type
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :account_type, :photo, :image_url
   
   #def apply_omniauth(omniauth)
   #  self.email = omniauth['user_info']['email'] if email.blank?
   #  authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   #end
+  
+  has_attached_file :photo, :styles => { :icon => "40x40#", :small => "150x150>" }, #:styles      => {:icon => "50x50#", :thumb=> "100x100#", :small  => "190x190#", :large => "500x500>" },
+    :url  => "/assets/user/:id/:style/:basename.:extension",
+    :path => ":rails_root/public/assets/user/:id/:style/:basename.:extension",
+    :default_url => "/assets/user/default/:style/default.jpg"
+  
+  before_validation :download_remote_image, :if => :image_url_provided?
+
+  validates_presence_of :image_remote_url, :if => :image_url_provided?, :message => 'is invalid or inaccessible'
   
   def password_required?
     (authentications.empty? || !password.blank?) && super
@@ -46,6 +56,10 @@ class User < ActiveRecord::Base
   def apply_facebook(omniauth)
     if (extra = omniauth['extra']['user_hash'] rescue false)
       self.email = (extra['email'] rescue '')
+      puts ''
+      puts 'facebook user_hash'
+      puts omniauth['extra']['user_hash']
+      puts ''
     end
   end
 
@@ -53,6 +67,9 @@ class User < ActiveRecord::Base
     if (extra = omniauth['extra']['user_hash'] rescue false)
       # Example fetching extra data. Needs migration to User model:
       self.firstname = (extra['name'] rescue '')
+      
+      self.image_remote_url = extra['profile_image_url'].gsub(/_normal/,'')
+      
     end
   end
 
@@ -65,5 +82,21 @@ class User < ActiveRecord::Base
     }
   end
   
+  def image_url_provided?
+    !self.image_remote_url.blank?
+  end
+
+  def download_remote_image
+    self.photo = do_download_remote_image
+    self.image_remote_url = image_remote_url
+  end
+
+  def do_download_remote_image
+    io = open(URI.parse(image_remote_url))
+    
+    def io.original_filename; base_uri.path.split('/').last; end
+    io.original_filename.blank? ? nil : io
+  rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
+  end
   
 end
