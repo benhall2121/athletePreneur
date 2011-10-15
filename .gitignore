@@ -8,7 +8,6 @@ tmp/cache
 tmp/sessions
 tmp/sockets
 tmp/pids/**/*
-public/assets/**/*
-public/assets/**/*
+public/assets/user/**/*
 public/ckeditor_assets/**/*
 
