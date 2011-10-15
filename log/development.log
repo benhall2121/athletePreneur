@@ -2556,3 +2556,79 @@ Completed 200 OK in 174ms (Views: 26.0ms | ActiveRecord: 16.3ms)
 
 
 Started GET "/auth/facebook" for 127.0.0.1 at Sat Oct 15 12:32:15 -0700 2011
+
+
+Started GET "/authentications" for 127.0.0.1 at Sat Oct 15 13:09:40 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+  [1m[36mSQL (89.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `authentications` WHERE (`authentications`.user_id = 4)) AS subquery[0m
+  [1m[35mAuthentication Load (0.2ms)[0m  SELECT `authentications`.* FROM `authentications` WHERE (`authentications`.user_id = 4)
+Rendered authentications/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 253ms (Views: 26.2ms | ActiveRecord: 90.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:09:44 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/index.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 63ms (Views: 54.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sat Oct 15 13:09:48 -0700 2011
+  Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 111ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:09:48 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (2.1ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 73ms (Views: 60.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 13:10:35 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/index.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 136ms (Views: 52.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at Sat Oct 15 13:10:37 -0700 2011
+  Processing by PostsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1
+Rendered posts/_form.html.erb (108.7ms)
+Rendered posts/new.html.erb within layouts/application (138.6ms)
+Completed 200 OK in 184ms (Views: 146.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at Sat Oct 15 13:10:42 -0700 2011
+  Processing by PostsController#create as HTML
+  Parameters: {"commit"=>"Create Post", "post"=>{"title"=>"asdasd", "content"=>"<p>\r\n\tasdads</p>\r\n"}, "authenticity_token"=>"mhNoUiF3ptReUGDLt+1O7SsJFgvdBq3j1We13ibOti0=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.3ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `posts` (`content`, `created_at`, `title`, `updated_at`, `user_id`) VALUES ('<p>\r\n	asdads</p>\r\n', '2011-10-15 20:10:42', 'asdasd', '2011-10-15 20:10:42', 1)
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 61ms
+
+
+Started GET "/posts/3" for 127.0.0.1 at Sat Oct 15 13:10:42 -0700 2011
+  Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE (`posts`.`id` = 3) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 4) LIMIT 1[0m
+Rendered posts/show.html.erb within layouts/application (120.1ms)
+Completed 200 OK in 139ms (Views: 127.3ms | ActiveRecord: 0.7ms)
