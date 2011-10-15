@@ -1,0 +1,21 @@
+
+development:
+  adapter: mysql2
+  database: athletePreneur_development
+  username: root
+  password:
+  encoding: utf8
+
+test:
+  adapter: mysql2
+  database: athletePreneur_test
+  username: root
+  password:
+  encoding: utf8
+
+production:
+  adapter: mysql2
+  database: athletePreneur_production
+  username: root
+  password: 
+  encoding: utf8
