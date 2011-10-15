@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015064416) do
+ActiveRecord::Schema.define(:version => 20111015190308) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -18,18 +18,28 @@ ActiveRecord::Schema.define(:version => 20111015064416) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "secret"
+    t.string   "token"
   end
 
-  create_table "projects", :force => true do |t|
-    t.string   "name"
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tasks", :force => true do |t|
-    t.integer  "project_id"
-    t.string   "name"
-    t.datetime "completed_at"
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +58,9 @@ ActiveRecord::Schema.define(:version => 20111015064416) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "account_type"
+    t.string   "firstname"
+    t.string   "lastname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

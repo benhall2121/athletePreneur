@@ -1,8 +1,9 @@
 AthletePreneur::Application.routes.draw do
+  resources :posts
+
   match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => {:registrations => 'registrations'}
-  resources :projects
-  resources :tasks
+  resources :projects  
   resources :authentications
-  root :to => "projects#index"
+  root :to => "posts#index"
 end

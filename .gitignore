@@ -1,0 +1,14 @@
+.bundle
+db/*.sqlite3
+log/*.log
+*.log
+*.sql
+*.sqlite
+tmp/cache
+tmp/sessions
+tmp/sockets
+tmp/pids/**/*
+public/assets/**/*
+public/assets/**/*
+public/ckeditor_assets/**/*
+
