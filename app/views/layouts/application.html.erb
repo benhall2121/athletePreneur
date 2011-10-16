@@ -27,38 +27,28 @@
     
   </head>
   <body>
-    <div class="navigation">    
-      <div class="nav_left">
-        <div><%= link_to 'Home', root_path %></div>
-          <% if user_signed_in? %>
-            <div><%= link_to 'Profile', show_user_path(current_user) %></div>
-            <div><%= link_to "Sign out", destroy_user_session_path %></div>
-          <% else %>
-            <div><%= link_to "Sign In", authentications_path %></div>
-          <% end %>
-        </div>
-        <div class="nav_right">
-          <%= form_tag main_search_path, :method => 'get', :id => "main_search" do %>
-            <p>
-              <%= text_field_tag :search, params[:search] %>
-              <%= submit_tag "Search", :name => nil %>
-            </p>
-          <% end %>
-        </div>
-    </div>
   
-    <div id="container">
+  <%= render 'shared/header_nav' %>
+  
+  <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+      
       <%= content_tag :h1, yield(:title) if show_title? %>
+      
       <%= yield %>
-    </div>
+  </div>
+  
+  <% if params[:controller] == 'posts' && params[:action] == 'index' %>
+    <%= render 'shared/companies' %>
+  <% end %>
     
-    <% if is_admin? %>
+  <% if is_admin? %>
     <div class="footer">
-      <%= link_to 'Verify Users', admin_verify_user_path %>
+      <%= link_to 'Verify Users', admin_verify_user_path %>  &middot; <%= link_to 'New Post', new_post_path %>
     </div>
-    <% end %>
+  <% end %>
+  
   </body>
 </html>

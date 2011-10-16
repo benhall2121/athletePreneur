@@ -1,0 +1,10 @@
+<div class="company_wrapper">
+<% @companies.each do |company| %>
+  <div class="single_company_wrapper">
+    <div class="single_company_image"><%= link_to image_tag(company.photo.url(:large_icon)), show_user_path(company), :class => 'image_link' %></div>
+    <div class="single_company_name"><%= link_to username(company), show_user_path(company) %></div>
+  </div>
+<% end %>
+</div>
+	
+	

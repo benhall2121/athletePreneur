@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   #  authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   #end
   
-  has_attached_file :photo, :styles => { :icon => "40x40#", :small => "150x150>" }, #:styles      => {:icon => "50x50#", :thumb=> "100x100#", :small  => "190x190#", :large => "500x500>" },
+  has_attached_file :photo, :styles => { :small_icon => "20x20#", :icon => "40x40#", :small => "150x150>", :large_icon => '75x75>#' }, #:styles      => {:icon => "50x50#", :thumb=> "100x100#", :small  => "190x190#", :large => "500x500>" },
     :url  => "/assets/user/:id/:style/:basename.:extension",
     :path => ":rails_root/public/assets/user/:id/:style/:basename.:extension",
     :default_url => "/assets/user/default/:style/default.jpg"
@@ -103,10 +103,12 @@ class User < ActiveRecord::Base
   rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
   end
   
-  def self.search(search)
-   if search
+  def self.search(search, type)
+    if search
       where('email LIKE ? or firstname like ? or lastname like ?', "%#{search}%", "%#{search}%", "%#{search}%")
-    else
+    elsif type
+      where('account_type like ?', "%#{type}%")
+    else	  
       scoped
     end
   end

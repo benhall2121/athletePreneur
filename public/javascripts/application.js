@@ -37,6 +37,14 @@ $(document).ready(function() {
   
   $("#main_search input").keyup(function() {
     $.get($("#main_search").attr("action"), $("#main_search").serialize(), null, "script");
+    $('.company_wrapper').html('');
+    return false;
+  });
+  
+  $(".user_type_main_search").click(function() {
+    $('.nav_links a').removeClass('header_selected');
+    $(this).addClass('header_selected');		  
+    $.get($(this).attr('href'), null, null, "script");
     return false;
   });
   
@@ -61,7 +69,7 @@ $(document).ready(function() {
     $('.verify_user_type_div').hide();
     $('#' + just_id + '_div').show();
     $('#user_type_apply').val(just_id);
-  })
+  });
   
 });
 

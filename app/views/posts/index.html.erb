@@ -1,26 +1,24 @@
-<h1>Listing posts</h1>
+<div class="post_header">
+  From game plan to business plan
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content.html_safe %></td>
-    <td><%= username(post.user) %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div class="posts_wrapper">
+ <% @posts.each do |post| %>
+   <div class="post_div">
+     <div class="post_image_div"><%= link_to post.icon.html_safe, post %></div>
+     <div class="post_title_div"><%= link_to post.title, post %></div>
+     <div class="post_content_div"><%= post.content.html_safe %></div>
+     <div class="post_name_div"><%= username(post.user) %></div>
+   </div>
+ <% end %>
+</div>
+
+<% if !user_signed_in? %>
+<div class="join_wrapper">
+  <%= link_to 'Join AthletePreneur', authentications_path %>
+</div>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Post', new_post_path %>
+

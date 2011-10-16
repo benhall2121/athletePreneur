@@ -5,12 +5,16 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.find(:all, :order => 'created_at desc', :limit => 10)
+    @posts = Post.find(:all, :order => 'created_at desc', :limit => 2)
     
-    @posts.each do |a|
-    	    a.content =  a.content.gsub(/\/content_/, '/thumb_').gsub(/style=".*"/, '')    
-    	    
+    @posts.map do |a|
+    	    icons = a.content.match(/\<img.*\/\>/).to_s.gsub(/\/content_/, '/large_icon_').gsub(/style=".*"/, '')
+    	    a.content = a.content.gsub(/\<img.*\/\>/,'')
+    	    a.content = html_truncate(a.content, 200)
+    	    a.icon = icons
     end
+    
+    @companies = User.find(:all, :conditions => ['account_type LIKE ?', 'company'], :order => 'created_at desc') 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -91,7 +95,7 @@ class PostsController < ApplicationController
   end
   
   def main_search
-    @search = User.search(params[:search]) #.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])	 
+    @search = User.search(params[:search], params[:type]) #.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])	 
   end
   
 end

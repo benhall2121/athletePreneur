@@ -1,0 +1,61 @@
+
+<div class="navigation"> 
+  <!------------------------------     Nav Left     ------------------------------>  
+  <div class="nav_left">
+    <%= link_to image_tag('Athletepreneur2logo255x44.png', :class => 'logo'), root_path %>
+  </div>
+  <!------------------------------     End Nav Left     ------------------------------>
+
+  <% if params[:controller] != 'authentications' %>
+  <% if user_signed_in? %>
+       
+    <!------------------------------     Logged In Nav Center     ------------------------------>
+    <div class="nav_center">
+       <%= form_tag main_search_path, :method => 'get', :id => "main_search" do %>
+         <p>
+           <%= text_field_tag :search, params[:search], :class => 'search_input', :placeholder => 'Search for Users' %>
+           <%#= submit_tag "Search", :name => nil %>
+         </p>
+       <% end %>
+     </div>
+     <!------------------------------     End Logged In Nav Center     ------------------------------>
+        
+     <!------------------------------     Logged In Nav Right     ------------------------------>
+     <div class="nav_right">
+       <div class="nav_links">
+         <%= link_to 'Home', root_path, :class => 'head' %> 
+         &middot; <%= link_to 'Companies', main_search_path(:type => 'company'), :class => 'user_type_main_search head' %> 
+         &middot; <%= link_to "Investors", main_search_path(:type => 'investors'), :class => 'user_type_main_search head' %>
+         &middot; <%= link_to username(current_user), show_user_path(current_user), :class => 'head' %>
+         &middot; <%= link_to "Logout", destroy_user_session_path, :class => 'head' %>
+       </div>
+     </div>
+     <!------------------------------     End Logged In Nav Center     ------------------------------>
+    
+   <% else %>
+  
+    
+     <!------------------------------     Not Logged In Nav Center     ------------------------------>
+     <div class="nav_center">
+       <div class="nav_links"><%= link_to 'Home', root_path, :class => 'header_selected head' %> &middot; <%= link_to 'Companies', main_search_path(:type => 'company'), :class => 'user_type_main_search head' %> &middot; <%= link_to "Investors", main_search_path(:type => 'investors'), :class => 'user_type_main_search head' %></div>
+     </div>
+     <!------------------------------     End Not Logged In Nav Center     ------------------------------>
+        
+     <!------------------------------     Not Logged In Nav Right     ------------------------------>
+     <div class="nav_right">
+       <div><%= link_to "Join", authentications_path, :class => 'head' %> &middot; <%= link_to "Login", authentications_path, :class => 'head' %></div>
+     </div>
+     <!------------------------------     End Not Logged In Nav Center     ------------------------------>
+    
+   <% end %>
+   <% end %>
+    
+    
+</div>
+
+
+
+
+
+
+
