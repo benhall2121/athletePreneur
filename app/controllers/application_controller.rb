@@ -40,16 +40,12 @@ class ApplicationController < ActionController::Base
   end
   
   def after_sign_in_path_for(resource)
-    #if !current_user.nil? && !current_user.account_type.nil?
-    #  show_user_path(current_user)
-    #else
+    if !current_user.nil? && !current_user.account_type.nil?
+      show_user_path(current_user)
+    else
       verify_user_path
-    #end
+    end
   end
-  
-  
-  
-  
   
   def html_truncate(html, truncate_length, options={})
     text, result = [], []
