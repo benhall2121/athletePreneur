@@ -49,10 +49,10 @@
 
   $.rails = rails = {
     // Link elements bound by jquery-ujs
-    linkClickSelector: 'a[data-confirm], a[data-method], a[data-remote], a[data-disable-with]',
+    linkClickSelector: 'a[data-confirm], a[data-method], a[data-remote]',
 
 		// Select elements bound by jquery-ujs
-		inputChangeSelector: 'select[data-remote], input[data-remote], textarea[data-remote]',
+		selectChangeSelector: 'select[data-remote]',
 
     // Form elements bound by jquery-ujs
     formSubmitSelector: 'form',
@@ -71,9 +71,6 @@
 
     // Form file input elements
     fileInputSelector: 'input:file',
-
-    // Link onClick disable selector with possible reenable after remote submission
-    linkDisableSelector: 'a[data-disable-with]',
 
     // Make sure that every Ajax request sends the CSRF token
     CSRFProtection: function(xhr) {
@@ -102,8 +99,7 @@
     handleRemote: function(element) {
       var method, url, data,
         crossDomain = element.data('cross-domain') || null,
-        dataType = element.data('type') || ($.ajaxSettings && $.ajaxSettings.dataType),
-        options;
+        dataType = element.data('type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 
       if (rails.fire(element, 'ajax:before')) {
 
@@ -117,15 +113,15 @@
             data.push(button);
             element.data('ujs:submit-button', null);
           }
-        } else if (element.is(rails.inputChangeSelector)) {
+        } else if (element.is('select')) {
           method = element.data('method');
           url = element.data('url');
           data = element.serialize();
-          if (element.data('params')) data = data + "&" + element.data('params');
+          if (element.data('params')) data = data + "&" + element.data('params'); 
         } else {
-          method = element.data('method');
-          url = element.attr('href');
-          data = element.data('params') || null;
+           method = element.data('method');
+           url = element.attr('href');
+           data = element.data('params') || null; 
         }
 
         options = {
@@ -147,8 +143,8 @@
             element.trigger('ajax:error', [xhr, status, error]);
           }
         };
-        // Only pass url to `ajax` options if not blank
-        if (url) { options.url = url; }
+        // Do not pass url to `ajax` options if blank
+        if (url) { $.extend(options, { url: url }); }
 
         rails.ajax(options);
       }
@@ -256,42 +252,14 @@
         });
       }
       return continuePropagation;
-    },
-
-    //  replace element's html with the 'data-disable-with' after storing original html
-    //  and prevent clicking on it
-    disableElement: function(element) {
-      element.data('ujs:enable-with', element.html()); // store enabled state
-      element.html(element.data('disable-with')); // set to disabled state
-      element.bind('click.railsDisable', function(e) { // prevent further clicking
-        return rails.stopEverything(e)
-      });
-    },
-
-    // restore element to its original state which was disabled by 'disableElement' above
-    enableElement: function(element) {
-      if (element.data('ujs:enable-with') !== undefined) {
-        element.html(element.data('ujs:enable-with')); // set to old enabled state
-        // this should be element.removeData('ujs:enable-with')
-        // but, there is currently a bug in jquery which makes hyphenated data attributes not get removed
-        element.data('ujs:enable-with', false); // clean up cache
-      }
-      element.unbind('click.railsDisable'); // enable element
     }
-
   };
 
   $.ajaxPrefilter(function(options, originalOptions, xhr){ if ( !options.crossDomain ) { rails.CSRFProtection(xhr); }});
 
-  $(rails.linkDisableSelector).live('ajax:complete', function() {
-      rails.enableElement($(this));
-  });
-
   $(rails.linkClickSelector).live('click.rails', function(e) {
     var link = $(this);
     if (!rails.allowAction(link)) return rails.stopEverything(e);
-
-    if (link.is(rails.linkDisableSelector)) rails.disableElement(link);
 
     if (link.data('remote') !== undefined) {
       rails.handleRemote(link);
@@ -302,13 +270,13 @@
     }
   });
 
-	$(rails.inputChangeSelector).live('change.rails', function(e) {
+	$(rails.selectChangeSelector).live('change.rails', function(e) {
     var link = $(this);
     if (!rails.allowAction(link)) return rails.stopEverything(e);
 
     rails.handleRemote(link);
     return false;
-  });
+  });	
 
   $(rails.formSubmitSelector).live('submit.rails', function(e) {
     var form = $(this),

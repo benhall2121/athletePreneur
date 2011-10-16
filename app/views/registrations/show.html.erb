@@ -1,2 +1,34 @@
 <%= image_tag @user.photo.url(:small) %>
+<%= image_tag @user.photo.url(:original) %>
+<%= image_tag @user.photo.url(:icon) %>
 
+<br />
+
+<% if !current_user.nil? && current_user.id != @user.id && allowed_to_follow_user(@user) && !already_following_user(@user) %>
+  <%= button_to "Follow", friendships_path(:friend_id => @user), :method => :post %>
+<% elsif !current_user.nil? && current_user.id != @user.id && already_following_user(@user) %>
+  <%= button_to "Unfollow", friendship_path(:friend_id => @user), :method => :delete %>
+<% end %>
+
+<br />
+
+<h2>Following - (<%= @user.friendships.count %>)</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%= link_to username(friendship.friend), show_user_path(friendship.friend_id) %>
+      <%= button_to "Unfollow", friendship, :method => :delete if !current_user.nil? && current_user.id == @user.id %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Followers - (<%= @user.inverse_friends.count %>)</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li>
+      <%= link_to username(user), show_user_path(user) %>
+      <%= button_to "X", friendship_path(:friend_id => user), :method => :delete if !current_user.nil? && current_user.id == @user.id %>
+      <%= button_to "Follow", friendships_path(:friend_id => user), :method => :post if !current_user.nil? && !already_following_user(user) && current_user.id == @user.id %>
+    </li>
+  <% end %>
+</ul>

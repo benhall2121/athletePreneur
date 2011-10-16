@@ -57,6 +57,9 @@ GEM
       crack (= 0.1.8)
     httpclient (2.2.1)
     i18n (0.4.1)
+    jquery-rails (1.0.13)
+      railties (~> 3.0)
+      thor (~> 0.14)
     json (1.6.1)
     mail (2.2.7)
       activesupport (>= 2.3.6)
@@ -156,6 +159,7 @@ GEM
     tzinfo (0.3.23)
     warden (0.10.7)
       rack (>= 1.0.0)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -164,6 +168,7 @@ DEPENDENCIES
   ckeditor
   devise
   fb_graph (= 1.9.5)
+  jquery-rails
   mongrel (= 1.2.0.pre2)
   mysql2 (< 0.3)
   nifty-generators
@@ -171,3 +176,4 @@ DEPENDENCIES
   paperclip
   rails (= 3.0.0)
   twitter
+  will_paginate (= 3.0.pre2)

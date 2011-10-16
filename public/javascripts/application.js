@@ -35,19 +35,9 @@ $(document).ready(function() {
        	    
   });
   
-  $('.company_login_submit').click(function(){
-  	
-      $.post($('#company_login_form').attr('action'), $('#company_login_form').serialize(), function(response) { 
-  	  if(response.match(/^http/)){	
-	    //parent.$.fancybox.close();
-	    parent.location.href = response;
-	  } else {
-	      $('body').html(response)
-	  }
-      });
-      	
-     return false;
-  	
+  $("#main_search input").keyup(function() {
+    $.get($("#main_search").attr("action"), $("#main_search").serialize(), null, "script");
+    return false;
   });
   
   

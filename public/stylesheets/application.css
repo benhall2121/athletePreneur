@@ -147,7 +147,39 @@ a {
 
 
 /**********  Mine **********/
+.navigation {
+  width: 75%;
+  margin: 0 auto;
+  background-color: #FFF;
+  padding: 20px 40px;
+  border: solid 1px black;
+  overflow:auto;
+}
+
+.navigation div{
+  display:inline-block;
+}
+
+.nav_left{
+  width:49.5%;
+  text-align:left;	
+}
+
+.nav_right{
+  width:49.5%;
+  text-align:right;	
+}
+
 .post_content{
   overflow:auto;	
+}
+
+.search_item_wrapper{
+  width:100%;
+}
+
+.search_item_wrapper div{
+ display:inline-block;	
+  vertical-align:middle;
 }
 

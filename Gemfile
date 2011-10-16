@@ -12,5 +12,7 @@ gem 'paperclip'
 gem 'ckeditor'
 gem 'twitter'
 gem 'fb_graph', '1.9.5'
+gem 'will_paginate', '3.0.pre2'
+gem 'jquery-rails'
 
 

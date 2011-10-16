@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015212546) do
+ActiveRecord::Schema.define(:version => 20111015224827) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(:version => 20111015212546) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "friendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -45,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20111015212546) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => ""
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
@@ -66,9 +72,9 @@ ActiveRecord::Schema.define(:version => 20111015212546) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "email"
   end
 
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

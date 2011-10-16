@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
-  before_filter :is_admin, :except => [:index, :show]	
+  before_filter :is_admin, :except => [:index, :show, :main_search]	
 	
 	
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    @posts = Post.find(:all, :order => 'created_at desc', :limit => 10)
+    
+    @posts.each do |a|
+    	    a.content =  a.content.gsub(/\/content_/, '/thumb_').gsub(/style=".*"/, '')    
+    	    
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -84,4 +89,9 @@ class PostsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def main_search
+    @search = User.search(params[:search]) #.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])	 
+  end
+  
 end
