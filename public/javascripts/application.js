@@ -40,6 +40,28 @@ $(document).ready(function() {
     return false;
   });
   
+  $('.account_type').change(function(){
+    id = $(this).attr('id').replace('account_type_id_', '');
+    account_type = $(this).val();
+    
+    if(account_type == ''){
+      return false;	    
+    }
+    
+    $.post('/admin_update_verify_user', {'id': id, 'account_type': account_type}, function(response) { 
+      $('#verify_user_' + id).hide('fast');
+    });
+  });
+  
+  $('.verify_user_nav div').click(function(){
+    id=$(this).attr('id')
+    $('.verify_user_nav div').removeClass('verify_user_div_selected');
+    $('#'+id).addClass('verify_user_div_selected')
+    just_id = id.replace('_nav_div','');
+    $('.verify_user_type_div').hide();
+    $('#' + just_id + '_div').show();
+    $('#user_type_apply').val(just_id);
+  })
   
 });
 

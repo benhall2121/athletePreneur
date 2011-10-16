@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015224827) do
+ActiveRecord::Schema.define(:version => 20111016063306) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20111015224827) do
     t.datetime "updated_at"
     t.string   "secret"
     t.string   "token"
+    t.string   "screen_name"
   end
 
   create_table "ckeditor_assets", :force => true do |t|
@@ -73,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20111015224827) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "email"
+    t.string   "user_type_apply"
+    t.string   "phone"
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

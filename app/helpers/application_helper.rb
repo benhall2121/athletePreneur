@@ -63,5 +63,21 @@ module ApplicationHelper
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class}
   end
+  
+  def user_type
+    ['Athlete', 'Company', 'Investor']  
+  end
+  
+  def user_type_with_admin
+    ['Admin'] + user_type
+  end
+  
+  def is_admin?
+    if !current_user.nil? && current_user.account_type == 'admin'
+      return true
+    else
+      return false
+    end
+  end
   	
 end

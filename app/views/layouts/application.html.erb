@@ -9,6 +9,7 @@
     <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
     <%= javascript_include_tag 'rails' %>
     <%= csrf_meta_tag %>
+    <link rel="Icon" href="/images/apfavicon.png" type="image/x-icon">
     
   <script type="text/javascript">
 
@@ -53,5 +54,11 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
+    
+    <% if is_admin? %>
+    <div class="footer">
+      <%= link_to 'Verify Users', admin_verify_user_path %>
+    </div>
+    <% end %>
   </body>
 </html>

@@ -156,6 +156,14 @@ a {
   overflow:auto;
 }
 
+.footer{
+  width: 75%;
+  margin: 0 auto;
+  font-size:10px;
+  color:gray;
+  text-align:center;
+}
+
 .navigation div{
   display:inline-block;
 }
@@ -181,5 +189,22 @@ a {
 .search_item_wrapper div{
  display:inline-block;	
   vertical-align:middle;
+}
+
+.verify_user_nav div{
+  display:inline-block;
+  padding: 10px;
+  border-top:1px solid black;
+  border-left:1px solid black;
+  border-right:1px solid black;
+  color:black;
+}
+
+.verify_user_nav div:hover, div.verify_user_div_selected{
+  cursor:pointer;
+  border-top:1px solid gray;
+  border-left:1px solid gray;
+  border-right:1px solid gray;
+  color:gray;
 }
 

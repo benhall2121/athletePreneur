@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable #, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :account_type, :photo, :image_url
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :account_type, :photo, :image_url, :user_type_apply, :phone
   
   #def apply_omniauth(omniauth)
   #  self.email = omniauth['user_info']['email'] if email.blank?
@@ -71,7 +71,6 @@ class User < ActiveRecord::Base
     if (extra = omniauth['extra']['user_hash'] rescue false)
       # Example fetching extra data. Needs migration to User model:
       self.firstname = (extra['name'] rescue '')
-      
       self.image_remote_url = extra['profile_image_url'].gsub(/_normal/,'')
       
     end
@@ -82,7 +81,8 @@ class User < ActiveRecord::Base
       :provider => omniauth['provider'], 
       :uid => omniauth['uid'], 
       :token => (omniauth['credentials']['token'] rescue nil),
-      :secret => (omniauth['credentials']['secret'] rescue nil)
+      :secret => (omniauth['credentials']['secret'] rescue nil), 
+      :screen_name => (omniauth['extra']['user_hash']['screen_name'] rescue nil)
     }
   end
   

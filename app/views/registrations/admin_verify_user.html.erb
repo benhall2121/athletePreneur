@@ -1,0 +1,16 @@
+<h2>Verify Users</h2>
+
+<% @user.each do |f| %>
+  <div id="verify_user_<%= f.id %>">
+  <%= username(f) %>
+  
+  <% f.authentications.each do |a| %>
+    <% if a.provider == 'twitter' %>
+      <%= link_to '@' + a.screen_name, 'http://twitter.com/#!/' + a.screen_name %>
+    <% end %>
+  <% end %> 
+  
+  <%= collection_select :account_type, f.account_type, user_type_with_admin, :to_s, :to_s, {:include_blank => true}, { :class => 'account_type', :id => 'account_type_id_' + f.id.to_s   } %>
+  </div>
+<% end %>
+

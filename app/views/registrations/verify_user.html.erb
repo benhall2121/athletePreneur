@@ -1,0 +1,113 @@
+<div class="verify_letter_div">
+<p>
+<h2>Verify User</h2>
+</p>
+
+<p>
+<%= username(@user) %>,
+</p>
+
+<p>
+Thanks for joining and We look forward to having you be a part of AthletePreneur. Once your account has been verified you will have access to the rest of our site. Please fill in as much information as possible to help us verify you account.
+</p>
+
+<p>
+Thanks,
+</p>
+
+<p>
+The AthletePreneur Team
+</p>
+</div>
+
+<div class="verify_user_nav">
+  <% if @user.user_type_apply == 'athlete' || @user.user_type_apply.nil? %>
+    <div id="athlete_nav_div" class="verify_user_div_selected">Athlete</div>
+  <% else %>
+    <div id="athlete_nav_div">Athlete</div>
+  <% end %>
+  
+  <% if @user.user_type_apply == 'company' %>
+    <div id="company_nav_div" class="verify_user_div_selected">Company</div>
+  <% else %>
+    <div id="company_nav_div">Company</div>
+  <% end %>
+  
+  <% if @user.user_type_apply == 'investor' %>
+    <div id="investor_nav_div" class="verify_user_div_selected">Investor</div>
+  <% else %>
+    <div id="investor_nav_div">Investor</div>
+  <% end %>
+</div>
+
+<div class="verify_user_type_wrapper">
+<%= form_for(@user, :url => update_verify_user_path) do |f| %>
+<% if f.object.user_type_apply == 'athlete' || f.object.user_type_apply.nil? %>
+<div id="athlete_div" class="verify_user_type_div">
+<% else %>
+<div id="athlete_div" class="verify_user_type_div" style="display:none;">
+<% end %>
+  <div class="field">
+    <%= f.label 'Athlete Name' %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label 'Email' %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label 'Phone Number' %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>  
+
+<% if f.object.user_type_apply == 'company' %>
+<div id="company_div" class="verify_user_type_div">
+<% else %>
+<div id="company_div" class="verify_user_type_div" style="display:none;">
+<% end %>
+  <div class="field">
+    <%= f.label 'Company Name' %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label 'Email' %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label 'Phone Number' %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>  
+
+<% if f.object.user_type_apply == 'investor' %>
+<div id="investor_div" class="verify_user_type_div">
+<% else %>
+<div id="investor_div" class="verify_user_type_div" style="display:none;">
+<% end %>
+  <div class="field">
+    <%= f.label 'Investor Name' %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label 'Email' %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label 'Phone Number' %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>  
+<%= f.hidden_field :user_type_apply, :id => "user_type_apply", :value => f.object.user_type_apply %>
+<% end %>
+</div>
+
