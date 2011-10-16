@@ -314,7 +314,8 @@ a {
 .company_wrapper{
   width: 75%;
   margin: 10px auto 0 auto;
-  overflow:auto;	
+  overflow:auto;
+  text-align:center;
 }
 
 .single_company_wrapper{
@@ -327,6 +328,8 @@ a {
   -webkit-border-radius: 5px;
   -khtml-border-radius: 5px;
   border-radius: 5px;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .single_company_wrapper:hover{

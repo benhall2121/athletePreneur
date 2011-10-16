@@ -25,7 +25,7 @@
        <div class="nav_links">
          <%= link_to 'Home', root_path, :class => 'head' %> 
          &middot; <%= link_to 'Companies', main_search_path(:type => 'company'), :class => 'user_type_main_search head' %> 
-         &middot; <%= link_to "Investors", main_search_path(:type => 'investors'), :class => 'user_type_main_search head' %>
+         &middot; <%= link_to "Investors", main_search_path(:type => 'investor'), :class => 'user_type_main_search head' %>
          &middot; <%= link_to username(current_user), show_user_path(current_user), :class => 'head' %>
          &middot; <%= link_to "Logout", destroy_user_session_path, :class => 'head' %>
        </div>

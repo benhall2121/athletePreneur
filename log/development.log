@@ -25857,3 +25857,250 @@ Rendered shared/_header_nav.html.erb (3.3ms)
 Rendered shared/_companies.html.erb (18.2ms)
 Rendered posts/index.html.erb within layouts/application (28.6ms)
 Completed 200 OK in 183ms (Views: 35.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authentications" for 127.0.0.1 at Sun Oct 16 14:44:20 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered shared/_header_nav.html.erb (4.4ms)
+Rendered authentications/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 1116ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at Sun Oct 16 14:44:22 -0700 2011
+
+
+Started GET "/authentications" for 127.0.0.1 at Sun Oct 16 14:54:12 -0700 2011
+  Processing by AuthenticationsController#index as HTML
+Rendered shared/_header_nav.html.erb (2.3ms)
+Rendered authentications/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 74ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at Sun Oct 16 14:54:14 -0700 2011
+
+
+Started GET "/auth/twitter/callback?oauth_token=vvGa4HA3HqVnN2gQcC64Sqt0g3A5mbqWuKM6zmJH0&oauth_verifier=oUNHVlRAL0d6DUcnRqZmwI4m4XnjKq4JAPb94kjX8Zc" for 127.0.0.1 at Sun Oct 16 14:54:14 -0700 2011
+  Processing by AuthenticationsController#create as HTML
+  Parameters: {"oauth_verifier"=>"oUNHVlRAL0d6DUcnRqZmwI4m4XnjKq4JAPb94kjX8Zc", "oauth_token"=>"vvGa4HA3HqVnN2gQcC64Sqt0g3A5mbqWuKM6zmJH0", "provider"=>"twitter"}
+  [1m[36mAuthentication Load (0.9ms)[0m  [1mSELECT `authentications`.* FROM `authentications` WHERE (`authentications`.`uid` = '19611362') AND (`authentications`.`provider` = 'twitter') LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `users` SET `current_sign_in_at` = '2011-10-16 21:54:15', `last_sign_in_at` = '2011-10-16 21:32:07', `sign_in_count` = 4, `updated_at` = '2011-10-16 21:54:15' WHERE (`users`.`id` = 42)
+[paperclip] Saving attachments.
+  [1m[36mSQL (46.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/verify_user
+Completed 302 Found in 518ms
+
+
+Started GET "/verify_user" for 127.0.0.1 at Sun Oct 16 14:54:15 -0700 2011
+  Processing by RegistrationsController#verify_user as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+Rendered shared/_header_nav.html.erb (4.1ms)
+Rendered registrations/verify_user.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 74ms (Views: 28.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main_search?type=investors" for 127.0.0.1 at Sun Oct 16 14:54:19 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"type"=>"investors"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (account_type like '%investors%')[0m
+Rendered shared/_search.html.erb (2.5ms)
+Rendered posts/main_search.js.erb (5.8ms)
+Completed 200 OK in 68ms (Views: 43.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/main_search?type=investors" for 127.0.0.1 at Sun Oct 16 14:55:31 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"type"=>"investors"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type like '%investors%')
+Rendered shared/_search.html.erb (1.4ms)
+Rendered posts/main_search.js.erb (3.0ms)
+Completed 200 OK in 40ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main_search?type=company" for 127.0.0.1 at Sun Oct 16 14:55:32 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"type"=>"company"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (account_type like '%company%')[0m
+Rendered shared/_search.html.erb (1.5ms)
+Rendered posts/main_search.js.erb (3.2ms)
+Completed 200 OK in 154ms (Views: 19.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main_search?type=investors" for 127.0.0.1 at Sun Oct 16 14:55:33 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"type"=>"investors"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type like '%investors%')
+Rendered shared/_search.html.erb (1.5ms)
+Rendered posts/main_search.js.erb (3.1ms)
+Completed 200 OK in 40ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/verify_user" for 127.0.0.1 at Sun Oct 16 14:56:05 -0700 2011
+  Processing by RegistrationsController#verify_user as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+Rendered shared/_header_nav.html.erb (3.5ms)
+Rendered registrations/verify_user.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 71ms (Views: 27.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main_search?type=investor" for 127.0.0.1 at Sun Oct 16 14:56:07 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"type"=>"investor"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type like '%investor%')
+Rendered shared/_search.html.erb (20.3ms)
+Rendered posts/main_search.js.erb (22.3ms)
+Completed 200 OK in 60ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/show_user/41" for 127.0.0.1 at Sun Oct 16 14:56:09 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 41) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.*, `users`.`id` FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 42)) AND (`users`.`id` = 41) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `friendships` WHERE (`friendships`.user_id = 41)) AS subquery
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE (`friendships`.user_id = 41)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))[0m
+Rendered shared/_header_nav.html.erb (3.7ms)
+Rendered registrations/show.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 98ms (Views: 44.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 14:56:19 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+Rendered shared/_header_nav.html.erb (3.8ms)
+Rendered shared/_companies.html.erb (0.4ms)
+Rendered posts/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 75ms (Views: 42.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 14:57:18 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+Rendered shared/_header_nav.html.erb (4.2ms)
+Rendered shared/_companies.html.erb (0.5ms)
+Rendered posts/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 75ms (Views: 41.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/show_user/42" for 127.0.0.1 at Sun Oct 16 14:57:23 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `friendships` WHERE (`friendships`.user_id = 42)) AS subquery
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE (`friendships`.user_id = 42)[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) AS count_id FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 42))
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 42))[0m
+Rendered shared/_header_nav.html.erb (3.8ms)
+Rendered registrations/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 105ms (Views: 50.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/main_search?utf8=%E2%9C%93&search=b" for 127.0.0.1 at Sun Oct 16 14:57:35 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"utf8"=>"✓", "search"=>"b"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (email LIKE '%b%' or firstname like '%b%' or lastname like '%b%')
+Rendered shared/_search.html.erb (21.1ms)
+Rendered posts/main_search.js.erb (22.9ms)
+Completed 200 OK in 59ms (Views: 36.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/main_search?utf8=%E2%9C%93&search=be" for 127.0.0.1 at Sun Oct 16 14:57:35 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"utf8"=>"✓", "search"=>"be"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (email LIKE '%be%' or firstname like '%be%' or lastname like '%be%')[0m
+Rendered shared/_search.html.erb (20.7ms)
+Rendered posts/main_search.js.erb (22.6ms)
+Completed 200 OK in 59ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/main_search?utf8=%E2%9C%93&search=ben" for 127.0.0.1 at Sun Oct 16 14:57:35 -0700 2011
+  Processing by PostsController#main_search as JS
+  Parameters: {"utf8"=>"✓", "search"=>"ben"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (email LIKE '%ben%' or firstname like '%ben%' or lastname like '%ben%')
+Rendered shared/_search.html.erb (20.4ms)
+Rendered posts/main_search.js.erb (22.2ms)
+Completed 200 OK in 60ms (Views: 35.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/show_user/41" for 127.0.0.1 at Sun Oct 16 14:57:37 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 41) LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.*, `users`.`id` FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 42)) AND (`users`.`id` = 41) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `friendships` WHERE (`friendships`.user_id = 41)) AS subquery
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE (`friendships`.user_id = 41)[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT COUNT(*) AS count_id FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))[0m
+Rendered shared/_header_nav.html.erb (3.6ms)
+Rendered registrations/show.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 98ms (Views: 48.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 14:57:46 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+Rendered shared/_header_nav.html.erb (4.5ms)
+Rendered shared/_companies.html.erb (0.5ms)
+Rendered posts/index.html.erb within layouts/application (137.0ms)
+Completed 200 OK in 177ms (Views: 144.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 14:59:34 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+Rendered shared/_header_nav.html.erb (4.6ms)
+Rendered shared/_companies.html.erb (0.5ms)
+Rendered posts/index.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 76ms (Views: 41.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 14:59:36 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+Rendered shared/_header_nav.html.erb (4.1ms)
+Rendered shared/_companies.html.erb (0.4ms)
+Rendered posts/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 74ms (Views: 40.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 15:00:00 -0700 2011
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` ORDER BY created_at desc LIMIT 2[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE (account_type LIKE 'company') ORDER BY created_at desc
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1[0m
+Rendered shared/_header_nav.html.erb (4.7ms)
+Rendered shared/_companies.html.erb (4.0ms)
+Rendered posts/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 191ms (Views: 44.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/show_user/41" for 127.0.0.1 at Sun Oct 16 15:00:04 -0700 2011
+  Processing by RegistrationsController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 42) LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 41) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.*, `users`.`id` FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 41)) AND (`users`.`id` = 42) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.*, `users`.`id` FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 42)) AND (`users`.`id` = 41) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT COUNT(*) AS count_id FROM (SELECT 1 FROM `friendships` WHERE (`friendships`.user_id = 41)) AS subquery
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE (`friendships`.user_id = 41)[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) AS count_id FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.user_id WHERE ((`friendships`.friend_id = 41))[0m
+Rendered shared/_header_nav.html.erb (4.4ms)
+Rendered registrations/show.html.erb within layouts/application (71.4ms)
+Completed 200 OK in 140ms (Views: 78.7ms | ActiveRecord: 4.1ms)
